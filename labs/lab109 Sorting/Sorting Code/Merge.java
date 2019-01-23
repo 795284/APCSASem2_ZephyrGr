@@ -5,7 +5,10 @@
  * 1/18/19
  */
 public class Merge{
+    
+    
     public static void mergeSort(int[] a, int n) {
+        
         if (n < 2) {return;} //  Base Case
         int mid = n / 2;
         int[] l = new int[mid];
@@ -33,6 +36,7 @@ public class Merge{
         while (i < left) { a[k++] = l[i++];}
         while (j < right) {a[k++] = r[j++];}
     }
+    
     public static void main(){
         int[] arr = new int[10];
         for(int i = 0; i <arr.length;i++){
