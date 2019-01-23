@@ -1,33 +1,40 @@
 
 /**
- * Write a description of class SelectionSort here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * Zephyr Granger
+ * Selection SOrt
+ * 1/16/19
  */
 public class SelectionSort
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    public static int[] sorter(int[] arr){
+        int numSwaps =0;
+        for (int i = 0; i < arr.length - 1; i++)
+        {
+            int x = i;
+            for (int j = i + 1; j < arr.length; j++)
+                if (arr[j] < arr[x]) 
+                    x = j;
 
-    /**
-     * Constructor for objects of class SelectionSort
-     */
-    public SelectionSort()
-    {
-        // initialise instance variables
-        x = 0;
+            int smallerNumber = arr[x];  
+            arr[x] = arr[i];
+            arr[i] = smallerNumber;
+            numSwaps++;
+            
+        }
+        
+        System.out.println("Number of swaps  = " +numSwaps);
+        return arr;
     }
+    public static void main(String a[]){
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+        int[] arr1 = {10,34,2,56,7,67,88,42};
+        int[] arr2 = sorter(arr1);
+        for(int i:arr2){
+            System.out.print(i);
+            System.out.print(", ");
+            
+            
+        }
     }
 }
+
