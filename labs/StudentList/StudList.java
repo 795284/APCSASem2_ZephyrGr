@@ -14,10 +14,25 @@ public class StudList{
     public StudList(){
         studList = new ArrayList<Student>();
     }
+public void bubbleSorter(ArrayList<Student> a, int w){
+     for(int j=0;j<ArrayList<Student>.size;j++){
+            // long start = System.currentTimeMillis(); 
+            for(int i=0;i<ArrayList<Student>.size-j-1;i++){
+
+                if(myArray[i]>myArray[i+1]){
+                    int temp= myArray[i];
+                    myArray[i] = myArray[i+1];
+                    myArray[i+1] = temp;
+                    numSwaps++;
+
+                }
+            }
+}
+}
     /**
      * implements the merge sort algorithm
      */
-    public void mergeSort(ArrayList<Student> a, int n){
+   /** public void mergeSort(ArrayList<Student> a, int n){
         if (n < 2){return;}//base case
         int mid = n/2;
         ArrayList<Student> l = new ArrayList<Student>();//left half of array
@@ -32,16 +47,18 @@ public class StudList{
         mergeSort(r, n-mid);
         merge(a, l, r, mid, n-mid);//merges the arrays back together and sorts them
     }
+
     /**
      * implements the merge sort algorithm
-     */
+     
     public void runMergeSort(){
         mergeSort(studList, studList.size());//runs mergeSort
     }
+
     /**
      * implements the merge sort algorithm
      */
-    public static void merge(ArrayList<Student> a, ArrayList<Student> l, ArrayList<Student> r, int left, int right){
+    /**public static void merge(ArrayList<Student> a, ArrayList<Student> l, ArrayList<Student> r, int left, int right){
         int i = 0, j = 0, k = 0;
         while (i < left && j < right){
             if (l.get(i).getStuNumber() <= r.get(j).getStuNumber()){//compares the elements of each half of the array to sort and merge them
@@ -53,10 +70,12 @@ public class StudList{
         while (i < left) {a.set(k++, l.get(i++));}
         while (j < right) {a.set(k++, r.get(j++));}
     }
+*/
     /**
      * separates the user input into three strings corresponding to first, middle, and last names
      * sets the first, middle, and last names for the given student
      */
+    
     public void parseUserInput(String name, Student student){
         String fn = ""; String mn = ""; String ln = "";
         int i = name.indexOf(" ");
@@ -81,6 +100,7 @@ public class StudList{
         student.setMiddleName(mn);
         student.setLastName(ln);
     }
+
     /**
      * adds a student to the list with the name, student number, and gpa
      * then parses the name input to set first, middle, and last names

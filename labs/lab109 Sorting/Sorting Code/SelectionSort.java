@@ -21,7 +21,6 @@ public class SelectionSort
             numSwaps++;
             
         }
-        
         System.out.println("Number of swaps  = " +numSwaps);
         return arr;
     }

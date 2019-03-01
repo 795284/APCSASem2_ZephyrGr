@@ -36,7 +36,6 @@ public class Merge{
         while (i < left) { a[k++] = l[i++];}
         while (j < right) {a[k++] = r[j++];}
     }
-    
     public static void main(){
         int[] arr = new int[10];
         for(int i = 0; i <arr.length;i++){
